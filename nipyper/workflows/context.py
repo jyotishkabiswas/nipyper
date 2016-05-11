@@ -78,7 +78,7 @@ class WorkflowContext:
         return self.runner.get_status(name)
 
     def get_result(self, name = None):
-        return self.runner.get_result(name)
+        return byvalue(self.runner.get_result(name))
 
     def find_node(self, name):
         pass

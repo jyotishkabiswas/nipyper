@@ -5,3 +5,4 @@ nipype>=0.11.0
 celery>=3.1.23
 redis>=2.10.5
 process_isolation>=0.13
+networkx>=0.11

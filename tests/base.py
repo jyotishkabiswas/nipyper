@@ -13,7 +13,6 @@ class BaseWorkflowTest(TestCase):
         call(['rm', '-rf', 'testresults'])
         call(['mkdir', 'testresults'])
 
-
     def _get_add_desc(self, node_type='Interface', name='add_interface'):
         fndef = """def _add(a, b):
     return a + b"""
@@ -36,3 +35,6 @@ class BaseWorkflowTest(TestCase):
 
     def _initCtx(self, uuid):
         return WorkflowContext(uuid, basedir='testresults')
+
+    def tearDown(self):
+        call(['rm', '-rf', 'testresults'])

@@ -54,9 +54,11 @@ def parse(flow, wfctxid = None):
         _args = []
         _kwargs = {}
         if 'args' in flow:
-            _args = flow['args']
+            if flow['args'] != None:
+                _args = flow['args']
         if 'keywords' in flow:
-            _kwargs = flow['keywords']
+            if flow['keywords'] != None:
+                _kwargs = flow['keywords']
         iface = interface['class'](*_args, **_kwargs)
         if 'inputs' in flow:
             for name, inp in flow['inputs'].iteritems():
@@ -83,9 +85,11 @@ def parse(flow, wfctxid = None):
         _args = []
         _kwargs = {}
         if 'args' in flow:
-            _args = flow['args']
+            if flow['args'] != None:
+                _args = flow['args']
         if 'keywords' in flow:
-            _kwargs = flow['keywords']
+            if flow['keywords'] != None:
+                _kwargs = flow['keywords']
         iface = interface['class'](*_args, **_kwargs)
         node = pe.Node(iface, name, iterables, itersource, synchronize, overwrite, needed_outputs)
         if 'inputs' in flow:
@@ -110,9 +114,11 @@ def parse(flow, wfctxid = None):
         _args = []
         _kwargs = {}
         if 'args' in flow:
-            _args = flow['args']
+            if flow['args'] != None:
+                _args = flow['args']
         if 'keywords' in flow:
-            _kwargs = flow['keywords']
+            if flow['keywords'] != None:
+                _kwargs = flow['keywords']
         iface = interface['class'](*_args, **_kwargs)
         node = pe.MapNode(iface, iterfield, name, serial)
         if 'inputs' in flow:

@@ -7,6 +7,8 @@ from celery import states
 
 from nipype.interfaces.utility import Function
 
+import requests
+
 class TestWorkflowContext(BaseWorkflowTest):
 
     def test_create(self):
